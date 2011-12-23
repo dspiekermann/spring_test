@@ -1,0 +1,122 @@
+@import url('clearing.css');
+
+html, body { 
+	margin: 0; 
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    line-height: 1.5;
+	color: #000;
+	/*background-color: #EDF8FA;*/
+}
+
+table, a, ss, p, form, hr, dl, dt, dd, div, h1, h2, h3, h4, h5, h6, label, ul, li {margin:0; padding:0} 
+h1, h2, h3, h4, h5, h6 { font-size: 11px; color: #000; font-weight: bold; text-indent: 0px; font-family:Verdana, Arial, Helvetica, sans-serif;}
+h3, h4, h5, h6 { font-family: 'Yanone Kaffeesatz', arial, serif; }
+h1, h2 { font-family: 'Droid Sans', arial, serif; }
+img {border: 0;}
+
+cite { float: right; }
+ul.classic { list-style: disc; margin-bottom: 1em; padding-left: 2em; }
+div.section { clear: both; }
+
+/* Normale links */
+a { color: #069; text-decoration: none; }
+a:hover, a:active, a:focus { text-decoration: underline; color: #333; }
+
+/* Anmeldung */
+
+#login_holder { width: 400px; height: 250px; position:absolute; padding: 30px 10px; border: 1px dotted #5784FF; top: 50%; left: 50%; margin-left: -200px; margin-top: -175px; }
+#login_area { width: 350px; text-align: left;}
+#login_logo { width: 350px; text-align: center; padding: 35px 0px 0px 20px; margin-top: 20px;}
+
+/* Header (header.jsp) Layout */
+
+#header_logo {width: 1000px; height: 95px; background: url(../images/bg_top.jpg);}
+#header_top_menu {width: 1000px; height: 30px; background: #F7F2F4; padding-top: 8px; text-align: right;}
+
+#header_logo_right {float: right; width: 150px; padding-top: 20px;}
+#header_title_left {float: left; width: 800px; padding-top: 40px; padding-left: 18px;}
+
+#header_top_menu a:link, #header_top_menu a:visited {color: #111; padding-left: 5px; padding-right: 15px;}
+#header_title_left h1 {color: #fff;}
+
+/* Header menu Layout (menu.jsp) */
+
+#header_menu_search {float: right; padding-right: 17px;}
+
+/* General Layout */
+
+#bg {width: 100%; /*background-color: #EDF8FA;*/ text-align:left; background: url(../images/bg.png) repeat-x;}
+#header {width: 1000px; }
+#header_top {width: 1000px; height: 135px; text-align: left; }
+#header_menu {width: 1000px; height: 40px; border-bottom: 1px solid #ccc; background: #F7F2F4;padding-top: 15px; text-align:left; padding-left: 20px;}
+#header_menu a:link, #header_menu a:visited {padding: 2px 15px;}
+#container {width: 980px; padding: 10px;}
+#content {width: 980px;}
+#content_in {width: 980px; text-align: left; padding: 0 8px; min-height: 200px;}
+#footer {width: 1000px; border-top: 1px solid #ccc;}
+#footer_cont {padding: 10px;}
+
+/* table layout */
+
+.table_full {width: 966px;}
+.table_full th {background: #F0F0F0; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 3px;}
+.table_full th+th {border-left: 1px solid #ccc; }
+.table_full td {padding: 5px 3px;}
+
+.table_full tr.tr_kunde_even td {background: #ccc;}
+.table_full tr.tr_kunde_hover td {background: #FAD566;}
+.table_full tr.tr_kunde_selected td {background: #8EB4FA;}
+
+.table_full tr.tr_tf_even td {background: #ccc;}
+.table_full tr.tr_tf_hover td {background: #FAD566;}
+.table_full tr.tr_tf_selected td {background: #8EB4FA;}
+
+/* toolbar layout */
+
+.toolbar_search {float: right; text-align: right; padding-right: 5px;}
+
+/* kunden layout */
+
+.kunde_footer {background: #F0F0F0; border-top: 1px solid #ccc; padding: 3px 15px 3px 10px;}
+.tf_footer {background: #F0F0F0; border-top: 1px solid #ccc; padding: 3px 15px 3px 10px;}
+
+#kunden_tabs_holder {margin-top: 15px; margin-right: 10px;}
+
+/* kunden menu layout */
+
+#kunden_menu {margin: 5px 12px 15px 0px; padding: 2px;}
+#kunden_control_menu {width: 100%; height: 30px; }
+
+#kunden_table_menu{width: 100%; height: 35px; }
+
+/* kunden edit layout */
+
+.abschnitt_holder {width: 700px; border: 1px solid #ccc; padding: 10px;}
+.abschnitt_holder_small {width: 440px; border: 1px solid #ccc; padding: 10px;}
+
+/* JS loading */
+
+#dloading {
+	position:fixed; 
+	width:180px; 
+	height:180px; 
+	margin-left: -100px; 
+	margin-top: -100px; 
+	top:50%; 
+	left:50%; 
+	overflow:hidden; 
+	visibility:hidden; 
+	background-color:#ffffff; 
+	border:1px #808080 solid;
+}
+
+* html #dloading { /* ie6 hack */
+	position: absolute;
+	margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+.inputbox {background: #fff; font-size: 10px; color: #333; border: solid 1px #B5B5B5; margin: 2px 0; padding: 2px;}
+
+
