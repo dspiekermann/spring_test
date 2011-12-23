@@ -19,7 +19,7 @@ public class ContactController {
 	@Autowired
 	private ContactService contactService;
 
-	@RequestMapping("/index")
+	@RequestMapping("/index2")
 	public String listContacts(Map<String, Object> map) {
 
 		map.put("contact", new Contact());
