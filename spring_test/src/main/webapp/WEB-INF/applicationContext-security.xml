@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+ 
+    <global-method-security pre-post-annotations="enabled">
+    </global-method-security>
+ 
+    <http use-expressions="true">
+ 
+        <intercept-url pattern="/index.html" access="permitAll" />
+        <intercept-url pattern="/timeout.html" access="permitAll" />
+        <intercept-url pattern="/redirect.html" access="permitAll" />
+        <intercept-url pattern="/media/**" access="permitAll" />
+        <intercept-url pattern="/includes/**" access="permitAll" />
+        <intercept-url pattern="/office/admin/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/office/**" access="hasRole('ROLE_USER')" />
+ 
+        <form-login login-page="/index.html" 
+        		authentication-failure-url="/index.html?login_error=1"
+        		default-target-url='/office/kunden.html'
+				always-use-default-target='true'
+        		/>
+        <logout logout-success-url="/index.html" />
+        <remember-me />
+		<!--
+		    Uncomment to enable X509 client authentication support
+		        <x509 />
+		-->
+        <session-management invalid-session-url="/index.html">
+            <concurrency-control max-sessions="2" error-if-maximum-exceeded="true" />
+        </session-management>
+    </http>
+ 
+    <authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="mysqldataSource" 
+						authorities-by-username-query="select u.username, a.role from users u, users_authority ua, authority a where u.username = ? and u.id=ua.user_id and a.id=ua.authority_id"
+						users-by-username-query="select username, password, enabled from users where username = ?"/>
+		</authentication-provider>
+    </authentication-manager>
+ 
+</beans:beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="general.definition" template="/WEB-INF/jsp/tiles/general/layout.jsp">
+		<put-attribute name="title" value="Spring3Example - Standard Titel" />
+		<put-attribute name="header" value="/WEB-INF/jsp/tiles/general/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/tiles/general/menu.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/tiles/general/footer.jsp" />
+		<put-attribute name="defaultcss" value="/media/css/default.css" />
+	</definition>
+ 
+	<definition name="/office/kunden" extends="general.definition">
+		<put-attribute name="title" value="Spring3Example - Kunden" />
+		<put-attribute name="content" value="/WEB-INF/jsp/office/kunden.jsp" />
+	</definition>
+ 
+	<definition name="/office/admin/admin" extends="general.definition">
+		<put-attribute name="title" value="Spring3Example - Admin" />
+		<put-attribute name="content" value="/WEB-INF/jsp/office/admin/admin.jsp" />
+	</definition>
+ 
+</tiles-definitions>

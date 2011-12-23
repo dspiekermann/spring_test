@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="onlybody.definition" template="/WEB-INF/jsp/tiles/onlybody/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="body" value="" />
+	</definition>
+ 
+	<definition name="/index" extends="onlybody.definition">
+		<put-attribute name="title" value="Spring3 Advanced Example - Anmeldung" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+	</definition>	
+ 
+</tiles-definitions>

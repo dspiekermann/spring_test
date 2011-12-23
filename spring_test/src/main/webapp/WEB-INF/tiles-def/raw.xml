@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="raw.definition" template="/WEB-INF/jsp/tiles/raw/layout.jsp">		
+		<put-attribute name="content" value="" />
+	</definition>
+ 
+	<definition name="/redirect" extends="raw.definition">
+		<put-attribute name="content" value="/WEB-INF/jsp/redirect.jsp" />
+	</definition>
+ 
+	<definition name="/office/kundentable" extends="raw.definition">
+		<put-attribute name="content" value="/WEB-INF/jsp/office/kundentable.jsp" />
+	</definition>
+ 
+	<definition name="/office/kundenneu" extends="raw.definition">
+		<put-attribute name="content" value="/WEB-INF/jsp/office/kundenneu.jsp" />
+	</definition>
+ 
+</tiles-definitions>
